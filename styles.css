@@ -1,0 +1,78 @@
+:root{
+  --gold:#B07A00;
+  --black:#0b0b0b;
+  --ink:#111;
+  --muted:#6b7280;
+  --bg:#fff;
+  --radius:14px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Merriweather", ui-serif, Georgia, serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:28px 20px}
+.header{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;font-size:18px;letter-spacing:.02em}
+.nav a{margin-left:18px;text-decoration:none;color:var(--ink)}
+.nav .btn{margin-left:18px}
+
+.hero{min-height:58vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.eyebrow{color:var(--muted);font-size:12px;margin-bottom:14px}
+.headline{font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:19px;color:var(--gold);margin:6px 0 18px}
+
+.section-title{font-size:22px;font-weight:900;margin:8px 0 6px}
+.lead{color:#262626}
+
+.stack-xl>*+*{margin-top:26px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:860px){.grid-2{grid-template-columns:1fr}}
+
+.card{border:1px solid #eaeaea;border-radius:var(--radius);padding:20px;background:#fff}
+.card-title{margin:0 0 8px 0;font-weight:800}
+
+.table-wrap{overflow:auto}
+.table{width:100%;border-collapse:collapse;font-size:14px}
+.table th,.table td{border-bottom:1px solid #eee;padding:10px 8px;text-align:left}
+.table th{font-weight:800}
+
+.list{padding-left:18px;margin:0}
+.list li{margin:6px 0}
+
+.form label{display:block;font-size:14px}
+.form input,.form textarea{
+  width:100%;margin-top:8px;border:1px solid #ddd;border-radius:12px;padding:12px 12px;font-family:inherit
+}
+.form textarea{resize:vertical}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-outline{border-color:var(--ink);color:var(--ink);background:transparent}
+
+.footer{padding-top:8px;padding-bottom:40px;text-align:center}
+.small{font-size:12px}
+.dim{color:var(--muted)}
+
+.rule{border:none;height:1px;background:var(--gold);opacity:.4;margin:8px 0 20px}
+
+.policy-body .brand{font-weight:900}
+.policy h1{margin:2px 0 0}
+.policy h2{margin:18px 0 6px}
+.signature{margin-top:20px}
+.policy-cta{display:flex;gap:12px;margin-top:18px}
+
+/* Print styles for policy */
+@media print{
+  .header .nav a:not(:first-child),
+  .header .btn,
+  .policy-cta{display:none!important}
+  .container{max-width:720px}
+  body{color:#000}
+  .rule{opacity:.6}
+}
