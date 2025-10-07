@@ -1,3 +1,7 @@
+/* ==============================
+   Époque Labs — Global Styles
+   ============================== */
+
 :root{
   --gold:#B07A00;
   --black:#0b0b0b;
@@ -16,63 +20,89 @@ body{
   line-height:1.6;
 }
 
-.container{max-width:1100px;margin:0 auto;padding:28px 20px}
-.header{display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:900;font-size:18px;letter-spacing:.02em}
-.nav a{margin-left:18px;text-decoration:none;color:var(--ink)}
-.nav .btn{margin-left:18px}
+/* Layout helpers */
+.page-center{
+  display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;
+}
+.container{max-width:800px;margin:0 auto;padding:40px 20px}
+.container.narrow{max-width:720px}
 
-.hero{min-height:58vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.eyebrow{color:var(--muted);font-size:12px;margin-bottom:14px}
-.headline{font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:19px;color:var(--gold);margin:6px 0 18px}
+/* Brand & hero */
+.brand{font-weight:700;font-size:20px;margin:0 0 18px;letter-spacing:.5px}
+.tagline{color:var(--gold);font-size:15px;margin:0 0 44px;letter-spacing:.8px}
 
-.section-title{font-size:22px;font-weight:900;margin:8px 0 6px}
-.lead{color:#262626}
+/* Buttons */
+.button,.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--gold);color:#fff;text-decoration:none;
+  padding:12px 35px;font-size:14px;text-transform:uppercase;letter-spacing:.8px;
+  border-radius:8px;border:1px solid transparent;cursor:pointer;font-weight:700;
+  transition:all .25s ease;
+}
+.button:hover,.btn:hover{background:var(--black);color:#fff}
+.btn-ghost{background:transparent;color:var(--gold);border-color:#3a2a0c}
+.btn-gold{background:var(--gold);color:var(--black)}
 
-.stack-xl>*+*{margin-top:26px}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-@media (max-width:860px){.grid-2{grid-template-columns:1fr}}
+/* Footer */
+.footer{margin-top:72px;font-size:11px;color:#666}
+.footer-line{color:var(--gold);margin:0 0 6px}
+.footer-legal{color:#888;margin:0}
 
+/* Cards & text */
 .card{border:1px solid #eaeaea;border-radius:var(--radius);padding:20px;background:#fff}
 .card-title{margin:0 0 8px 0;font-weight:800}
+.lead{color:#262626;margin:8px 0}
 
-.table-wrap{overflow:auto}
-.table{width:100%;border-collapse:collapse;font-size:14px}
-.table th,.table td{border-bottom:1px solid #eee;padding:10px 8px;text-align:left}
-.table th{font-weight:800}
+/* Links */
+a.link{color:var(--gold);text-decoration:none}
 
-.list{padding-left:18px;margin:0}
-.list li{margin:6px 0}
+/* ==============================
+   Policy page styles
+   ============================== */
+.wrap{max-width:960px;margin:0 auto;padding:56px 24px 80px}
+.navtop{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.navtop a{color:var(--gold);text-decoration:none;font-size:14px}
+.header-lockup{margin-bottom:18px}
+.brand-lockup{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.brand-lockup img{width:42px;height:42px;border-radius:6px;object-fit:cover}
+.eyebrow{color:#7f7f7f;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.title-xl{font-size:22px;font-weight:700;margin:6px 0 4px;color:#000}
+.subtle{color:#8c6a2e;font-size:13px}
+.btn-row{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
 
-.form label{display:block;font-size:14px}
-.form input,.form textarea{
-  width:100%;margin-top:8px;border:1px solid #ddd;border-radius:12px;padding:12px 12px;font-family:inherit
+.policy-card{
+  background:#0B0B0B;border:1px solid #2a2a2a;border-radius:14px;padding:28px;margin:18px 0;
 }
-.form textarea{resize:vertical}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.policy-card h2{font-size:18px;letter-spacing:.02em;margin:0 0 10px;color:#e8e8e8}
+.policy-card p,.policy-card li{color:#cfcfcf;line-height:1.7}
+.policy-card strong{color:#fff}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer}
-.btn-gold{background:var(--gold);color:#fff}
-.btn-outline{border-color:var(--ink);color:var(--ink);background:transparent}
+.table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:12px;margin-top:8px}
+.table th,.table td{padding:14px 12px;border-bottom:1px solid #2a2a2a;text-align:left}
+.table th{color:#EAD8B0;font-weight:700;background:#141414}
+.table td{color:#d9d9d9}
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:var(--gold);color:var(--black);font-size:12px;font-weight:700}
+.muted{color:#a8a8a8;font-size:13px}
+.divider{height:1px;background:#232323;margin:18px 0;border-radius:1px}
 
-.footer{padding-top:8px;padding-bottom:40px;text-align:center}
-.small{font-size:12px}
-.dim{color:var(--muted)}
+.sig{display:grid;gap:10px;grid-template-columns:1fr 1fr;margin-top:12px}
+.sig .box{border:1px dashed #3a3a3a;border-radius:10px;padding:14px;color:#cfcfcf;min-height:64px}
 
-.rule{border:none;height:1px;background:var(--gold);opacity:.4;margin:8px 0 20px}
+.footer-note{text-align:center;color:#7b7b7b;margin-top:28px;font-size:12px}
 
-.policy-body .brand{font-weight:900}
-.policy h1{margin:2px 0 0}
-.policy h2{margin:18px 0 6px}
-.signature{margin-top:20px}
-.policy-cta{display:flex;gap:12px;margin-top:18px}
-
-/* Print styles for policy */
+/* Print */
 @media print{
-  .header .nav a:not(:first-child),
-  .header .btn,
-  .policy-cta{display:none!important}
-  .container{max-width:720px}
-  body{color:#000}
-  .rule{opacity:.6}
+  body{background:#fff;color:#000}
+  .policy-card{background:#fff;border:#ddd solid 1px}
+  .btn-row,.navtop{display:none!important}
+  .wrap{padding-top:0}
 }
+
+/* ==============================
+   Apply (request) page
+   ============================== */
+.pre{
+  background:#0f0f0f;color:#d7d7d7;border-radius:12px;padding:14px;overflow:auto;
+  font-size:13px;line-height:1.5
+}
+
