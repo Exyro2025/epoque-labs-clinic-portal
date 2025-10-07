@@ -1,69 +1,27 @@
-<!-- FILE: policy.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Époque Labs — Professional Clinic Partnership Policy</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"/>
-
-  <!-- Favicon & Meta -->
   <link rel="icon" type="image/png" href="epoque-favicon.png"/>
   <meta name="theme-color" content="#B07A00"/>
   <meta name="description" content="Professional Clinic Partnership Policy — Époque Labs."/>
-
-  <!-- Styles -->
   <link rel="stylesheet" href="styles.css"/>
-
-  <style>
-    /* ===== policy page additions (keeps your styles.css intact if you prefer inline) ===== */
-    .wrap { max-width: 960px; margin: 0 auto; padding: 56px 24px 80px; }
-    .navtop { display:flex; align-items:center; gap:12px; margin-bottom:28px; }
-    .navtop a { color:#B07A00; text-decoration:none; font-size:14px; }
-    .policy-card { background:#0B0B0B; border:1px solid #2a2a2a; border-radius:14px; padding:28px; margin:18px 0; }
-    .policy-card h2 { font-size:18px; letter-spacing:.02em; margin:0 0 10px; color:#e8e8e8; }
-    .policy-card p, .policy-card li { color:#cfcfcf; line-height:1.7; }
-    .policy-card strong { color:#fff; }
-    .brand-lockup { display:flex; align-items:center; gap:14px; margin-bottom:6px; }
-    .brand-lockup img { width:42px; height:42px; border-radius:6px; object-fit:cover; }
-    .eyebrow { color:#bfbfbf; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
-    .title-xl { font-size:22px; font-weight:700; margin:6px 0 4px; color:#fff; }
-    .subtle { color:#c7a25a; font-size:13px; }
-    .table { width:100%; border-collapse:collapse; overflow:hidden; border-radius:12px; margin-top:8px; }
-    .table th, .table td { padding:14px 12px; border-bottom:1px solid #2a2a2a; text-align:left; }
-    .table th { color:#EAD8B0; font-weight:700; background:#141414; }
-    .table td { color:#d9d9d9; }
-    .badge { display:inline-block; padding:4px 8px; border-radius:999px; background:#B07A00; color:#0B0B0B; font-size:12px; font-weight:700; }
-    .muted { color:#a8a8a8; font-size:13px; }
-    .divider { height:1px; background:#232323; margin:28px 0; border-radius:1px; }
-    .btn-row { display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; }
-    .btn { appearance:none; border:none; border-radius:10px; padding:12px 16px; font-weight:700; cursor:pointer; }
-    .btn-gold { background:#B07A00; color:#0B0B0B; }
-    .btn-ghost { background:transparent; color:#B07A00; border:1px solid #3a2a0c; }
-    .footer-note { text-align:center; color:#a9a9a9; margin-top:28px; font-size:12px; }
-    .sig { display:grid; gap:10px; grid-template-columns: 1fr 1fr; margin-top:12px; }
-    .sig .box { border:1px dashed #3a3a3a; border-radius:10px; padding:14px; color:#cfcfcf; min-height:64px; }
-    @media print {
-      body { background:#fff; color:#000; }
-      .policy-card { background:#fff; border:#ddd solid 1px; }
-      .btn-row, .navtop { display:none !important; }
-      .wrap { padding-top:0; }
-    }
-  </style>
 </head>
 
 <body>
   <div class="wrap">
-    <!-- Top nav -->
+    <!-- top nav -->
     <div class="navtop">
       <a href="index.html">← Back to House</a>
       <span class="eyebrow">Policy • Version 1.0</span>
     </div>
 
-    <!-- Header / Lockup -->
-    <header style="margin-bottom:18px;">
+    <!-- header lockup -->
+    <header class="header-lockup">
       <div class="brand-lockup">
         <img src="epoque-favicon.png" alt="Époque Labs"/>
         <div>
@@ -193,14 +151,13 @@
       </div>
       <div class="btn-row">
         <button class="btn btn-gold" onclick="window.print()">Print / Save PDF</button>
-        <a class="btn btn-ghost" href="index.html">Back to House</a>
+        <a class="btn btn-ghost" href="apply.html">Request Partnership</a>
       </div>
     </div>
 
-    <p class="footer-note">
-      © MMXXV Époque Labs — All Rights Reserved • Mémoire Voûtée™ — The Eternal Blueprint of the House
-    </p>
+    <p class="footer-note">© MMXXV Époque Labs — All Rights Reserved • Mémoire Voûtée™ — The Eternal Blueprint of the House</p>
   </div>
 </body>
 </html>
+
 
