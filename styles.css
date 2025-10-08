@@ -105,31 +105,3 @@ a.link{color:var(--gold);text-decoration:none}
   background:#0f0f0f;color:#d7d7d7;border-radius:12px;padding:14px;overflow:auto;
   font-size:13px;line-height:1.5
 }
-/* === DNA watermark (gold on white) === */
-.dna-watermark { position: relative; isolation: isolate; }
-.dna-watermark::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  /* The mask paints the DNA shape; background-color sets its tint */
-  mask: url("dna.svg") center 38% / 520px auto no-repeat;
-  -webkit-mask: url("dna.svg") center 38% / 520px auto no-repeat;
-  background-color: rgba(176, 122, 0, 0.10); /* #B07A00 @ 10% */
-}
-
-/* Mobile: scale the motif down slightly */
-@media (max-width: 640px) {
-  .dna-watermark::before {
-    mask-size: 360px auto;
-    -webkit-mask-size: 360px auto;
-    background-color: rgba(176, 122, 0, 0.12);
-  }
-}
-
-/* Higher contrast users see a touch more opacity */
-@media (prefers-contrast: more) {
-  .dna-watermark::before { background-color: rgba(176,122,0,0.14); }
-}
-
-
