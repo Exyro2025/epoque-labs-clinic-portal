@@ -48,13 +48,19 @@ body{
 .footer-line{color:var(--gold);margin:0 0 6px}
 .footer-legal{color:#888;margin:0}
 }
-.footer-ethos {
+/* Ethos line (strong specificity to win) */
+.footer p.footer-ethos {
   font-size: 14px;
-  color: rgba(43, 29, 26, 0.6); /* subtle gray tone */
-  font-style: italic;
   line-height: 1.6;
-  margin-top: 12px;
+  margin: 12px 0;
+  font-style: italic;
+  color: rgba(176, 122, 0, 0.7); /* soft gold */
 }
+
+/* If you prefer a subtle gray instead, swap this color:
+   color: rgba(43, 29, 26, 0.6);
+*/
+
 
 /* Cards & text */
 .card{border:1px solid #eaeaea;border-radius:var(--radius);padding:20px;background:#fff}
