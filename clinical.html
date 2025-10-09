@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clinical Partnership | Époque Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/main.css">
+  <style>
+    .wrap{max-width:920px;margin:3rem auto;padding:0 1.25rem}
+    .card{background:#fff;border:1px solid #e6e0da;border-radius:18px;padding:1.75rem;box-shadow:0 10px 26px rgba(0,0,0,.05)}
+    .eyebrow{font-style:italic;color:#6b625c;margin:.15rem 0 .75rem}
+    .hairline{height:1px;background:linear-gradient(90deg,transparent,#eadfd3,transparent);margin:.5rem 0 1.2rem;border-radius:999px}
+    .grid-2{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
+    @media(max-width:720px){.grid-2{grid-template-columns:1fr}}
+    label{font-weight:600;font-size:.95rem}
+    input,select,textarea{width:100%;padding:.8rem .9rem;border:1px solid #cfcfcf;border-radius:10px;font:1rem Inter,sans-serif}
+    .btn{display:inline-block;border-radius:999px;padding:.85rem 1.25rem;font-weight:600;letter-spacing:.01em;text-decoration:none;border:1px solid #1a1a1a;background:#1a1a1a;color:#fff}
+    .btn:hover{background:#c4a463;border-color:#c4a463}
+    .btn.outline{background:transparent;color:#1a1a1a}
+    .btn.outline:hover{background:#1a1a1a;color:#fff}
+  </style>
+</head>
+<body>
+  <header style="background:#eadfd3; text-align:center; padding:4.5rem 1.25rem 2.25rem;">
+    <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,2.6rem); margin:0;">Époque Labs — Clinical Partnership</h1>
+    <p style="font-style:italic; opacity:.85; margin:.4rem 0 0;">Professional access · Confidential</p>
+  </header>
+
+  <main class="wrap">
+    <div class="card">
+      <div class="eyebrow">Step 1 · Clinic Verification</div>
+      <h2 style="font-family:'Playfair Display',serif; margin:.1rem 0 .2rem;">Verify Your Clinic</h2>
+      <div class="hairline"></div>
+
+      <form id="verifyForm" novalidate>
+        <input type="text" name="hp" tabindex="-1" style="position:absolute; left:-9999px; opacity:0" aria-hidden="true">
+        <div class="grid-2">
+          <div><label>Contact Name</label><input id="contactName" required></div>
+          <div><label>Clinic / Practice Name</label><input id="clinicName" required></div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <label>License Type</label>
+            <select id="licenseType" required>
+              <option value="" disabled selected>Choose…</option>
+              <option>MD / DO</option><option>PA / NP</option><option>RN / BSN</option>
+              <option>Licensed Aesthetician</option><option>Other Health Professional</option>
+            </select>
+          </div>
+          <div><label>License Number</label><input id="licenseNumber" required></div>
+        </div>
+        <div class="grid-2">
+          <div><label>Professional Email</label><input id="email" type="email" required></div>
+          <div><label>Phone (optional)</label><input id="phone" inputmode="tel"></div>
+        </div>
+        <div><label>Clinic Website (optional)</label><input id="website" placeholder="https://"></div>
+        <label style="display:block; margin:.6rem 0 0;">
+          <input type="checkbox" id="agree" required> I confirm the details above are accurate and products will be handled under professional supervision.
+        </label>
+
+        <div style="display:flex; gap:.75rem; margin-top:1rem; flex-wrap:wrap;">
+          <button class="btn" type="submit">Continue to Partnership Policy</button>
+          <a class="btn outline" href="/portal/policy.html">View Policy (read-only)</a>
+        </div>
+        <p style="font-size:.9rem; color:#6b625c; margin-top:.6rem;">
+          Questions? <a href="mailto:conact.epoch@proton.me">conact.epoch@proton.me</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Époque Labs™ · All rights reserved.<br>
+    Époquelle™, La Méthode Émile™, and Compendium d’Aragon™ are protected trademarks.
+  </footer>
+
+  <script>
+    document.getElementById('verifyForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const required = ['contactName','clinicName','licenseType','licenseNumber','email','agree'];
+      for (const id of required){
+        const el = document.getElementById(id);
+        if (!el || (el.type === 'checkbox' ? !el.checked : !el.value.trim())) { el && el.focus(); return; }
+      }
+      sessionStorage.setItem('epo.verified','true');
+      sessionStorage.setItem('epo.contact', document.getElementById('contactName').value.trim());
+      sessionStorage.setItem('epo.clinic', document.getElementById('clinicName').value.trim());
+      location.href = '/portal/policy.html?verified=true';
+    });
+  </script>
+</body>
+</html>
