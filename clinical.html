@@ -6,7 +6,8 @@
   <title>Clinical Partnership | Époque Labs</title>
   <meta name="robots" content="noindex, nofollow" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/main.css">
+  <!-- FIX: use your actual stylesheet at project root -->
+  <link rel="stylesheet" href="styles.css">
   <style>
     .wrap{max-width:920px;margin:3rem auto;padding:0 1.25rem}
     .card{background:#fff;border:1px solid #e6e0da;border-radius:18px;padding:1.75rem;box-shadow:0 10px 26px rgba(0,0,0,.05)}
@@ -20,6 +21,7 @@
     .btn:hover{background:#c4a463;border-color:#c4a463}
     .btn.outline{background:transparent;color:#1a1a1a}
     .btn.outline:hover{background:#1a1a1a;color:#fff}
+    footer{background:#2b1d1a;color:#fff;text-align:center;padding:2rem 1rem;font-size:.9rem;margin-top:3rem}
   </style>
 </head>
 <body>
@@ -35,34 +37,58 @@
       <div class="hairline"></div>
 
       <form id="verifyForm" novalidate>
+        <!-- honeypot -->
         <input type="text" name="hp" tabindex="-1" style="position:absolute; left:-9999px; opacity:0" aria-hidden="true">
         <div class="grid-2">
-          <div><label>Contact Name</label><input id="contactName" required></div>
-          <div><label>Clinic / Practice Name</label><input id="clinicName" required></div>
+          <div>
+            <label for="contactName">Contact Name</label>
+            <input id="contactName" name="contactName" required autocomplete="name">
+          </div>
+          <div>
+            <label for="clinicName">Clinic / Practice Name</label>
+            <input id="clinicName" name="clinicName" required>
+          </div>
         </div>
         <div class="grid-2">
           <div>
-            <label>License Type</label>
-            <select id="licenseType" required>
+            <label for="licenseType">License Type</label>
+            <select id="licenseType" name="licenseType" required>
               <option value="" disabled selected>Choose…</option>
-              <option>MD / DO</option><option>PA / NP</option><option>RN / BSN</option>
-              <option>Licensed Aesthetician</option><option>Other Health Professional</option>
+              <option>MD / DO</option>
+              <option>PA / NP</option>
+              <option>RN / BSN</option>
+              <option>Licensed Aesthetician</option>
+              <option>Other Health Professional</option>
             </select>
           </div>
-          <div><label>License Number</label><input id="licenseNumber" required></div>
+          <div>
+            <label for="licenseNumber">License Number</label>
+            <input id="licenseNumber" name="licenseNumber" required>
+          </div>
         </div>
         <div class="grid-2">
-          <div><label>Professional Email</label><input id="email" type="email" required></div>
-          <div><label>Phone (optional)</label><input id="phone" inputmode="tel"></div>
+          <div>
+            <label for="email">Professional Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div>
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" inputmode="tel" autocomplete="tel">
+          </div>
         </div>
-        <div><label>Clinic Website (optional)</label><input id="website" placeholder="https://"></div>
+        <div>
+          <label for="website">Clinic Website (optional)</label>
+          <input id="website" name="website" placeholder="https://">
+        </div>
         <label style="display:block; margin:.6rem 0 0;">
-          <input type="checkbox" id="agree" required> I confirm the details above are accurate and products will be handled under professional supervision.
+          <input type="checkbox" id="agree" name="agree" required>
+          I confirm the details above are accurate and products will be handled under professional supervision.
         </label>
 
         <div style="display:flex; gap:.75rem; margin-top:1rem; flex-wrap:wrap;">
           <button class="btn" type="submit">Continue to Partnership Policy</button>
-          <a class="btn outline" href="/portal/policy.html">View Policy (read-only)</a>
+          <!-- FIX: use correct path to policy page -->
+          <a class="btn outline" href="policy.html">View Policy (read-only)</a>
         </div>
         <p style="font-size:.9rem; color:#6b625c; margin-top:.6rem;">
           Questions? <a href="mailto:conact.epoch@proton.me">conact.epoch@proton.me</a>
@@ -82,12 +108,14 @@
       const required = ['contactName','clinicName','licenseType','licenseNumber','email','agree'];
       for (const id of required){
         const el = document.getElementById(id);
-        if (!el || (el.type === 'checkbox' ? !el.checked : !el.value.trim())) { el && el.focus(); return; }
+        const ok = el.type === 'checkbox' ? el.checked : (el.value || '').trim();
+        if (!ok) { el && el.focus(); return; }
       }
       sessionStorage.setItem('epo.verified','true');
-      sessionStorage.setItem('epo.contact', document.getElementById('contactName').value.trim());
-      sessionStorage.setItem('epo.clinic', document.getElementById('clinicName').value.trim());
-      location.href = '/portal/policy.html?verified=true';
+      sessionStorage.setItem('epo.contact', (document.getElementById('contactName').value || '').trim());
+      sessionStorage.setItem('epo.clinic', (document.getElementById('clinicName').value || '').trim());
+      // FIX: redirect to your real policy page at root
+      location.href = 'policy.html?verified=true';
     });
   </script>
 </body>
