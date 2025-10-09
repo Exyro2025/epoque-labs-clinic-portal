@@ -119,3 +119,56 @@ a.link{color:var(--gold);text-decoration:none}
   background:#0f0f0f;color:#d7d7d7;border-radius:12px;padding:14px;overflow:auto;
   font-size:13px;line-height:1.5
 }
+/* === Clinical Portal Navigation === */
+.c-crumb {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  padding: 0 16px;
+}
+.c-crumb a {
+  color: #765c24;
+  text-decoration: none;
+}
+.c-crumb a:hover {
+  text-decoration: underline;
+}
+
+.c-nav {
+  max-width: 1100px;
+  margin: 10px auto 30px;
+  padding: 10px 16px;
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid #eadfd3;
+  border-radius: 12px;
+  background: #fffdfb;
+}
+.c-nav a {
+  padding: .55rem .9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #2b1d1a;
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+.c-nav a:hover {
+  background: #f3ece4;
+}
+.c-nav a.active {
+  background: #eadfd3;
+  border-color: #eadfd3;
+}
+.c-nav a.btn {
+  background: #1a1a1a;
+  color: #fff;
+}
+.c-nav a.btn.dark {
+  background: #2b1d1a;
+  color: #fff;
+}
+.c-nav a.btn:hover {
+  filter: brightness(1.06);
+}
+
