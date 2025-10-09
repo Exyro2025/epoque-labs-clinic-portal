@@ -33,11 +33,14 @@
     <p style="color:#6b625c; font-style:italic; margin:.25rem 0 1.25rem;">For verified clinics · MOQ applies</p>
 
     <div class="card">
-      <form action="https://formsubmit.co/conact.epoch@proton.me" method="POST">
-        <input type="hidden" name="_captcha" value="false">
+      <form action="https://formsubmit.co/contact.epoch@proton.me" method="POST">
+        <!-- FormSubmit controls -->
+        <input type="hidden" name="_subject" value="Époque Labs — Wholesale Request">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_subject" value="[Wholesale Request] Époque Labs">
-        <input type="hidden" name="_next" value="/thank-you.html?topic=wholesale-request">
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Optional: change to your real thank-you page if you have one -->
+        <input type="hidden" name="_next" value="https://epoquelabs-collection.vercel.app/thank-you.html">
+
 
         <div class="grid-2">
           <div><label>Clinic / Practice</label><input name="Clinic" required></div>
