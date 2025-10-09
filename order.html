@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wholesale Request | Époque Labs</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <style>
+    .wrap{max-width:880px;margin:48px auto;padding:0 20px}
+    .card{background:#fff;border:1px solid #e6e0da;border-radius:16px;padding:22px}
+    form{display:grid;gap:12px}
+    .grid-2{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    @media(max-width:720px){.grid-2{grid-template-columns:1fr}}
+    input,select,textarea{width:100%;padding:.8rem .9rem;border:1px solid #cfcfcf;border-radius:10px;font:1rem Inter,sans-serif}
+    .btn{display:inline-block;border-radius:999px;padding:10px 18px;font-weight:600;border:1px solid #1a1a1a;background:#1a1a1a;color:#fff;text-decoration:none}
+    .btn:hover{background:#c4a463;border-color:#c4a463}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1 style="font-family:'Playfair Display',serif;">Wholesale Request</h1>
+    <p style="color:#6b625c; font-style:italic; margin:.25rem 0 1.25rem;">For verified clinics · MOQ applies</p>
+
+    <div class="card">
+      <form action="https://formsubmit.co/conact.epoch@proton.me" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="[Wholesale Request] Époque Labs">
+        <input type="hidden" name="_next" value="/thank-you.html?topic=wholesale-request">
+
+        <div class="grid-2">
+          <div><label>Clinic / Practice</label><input name="Clinic" required></div>
+          <div><label>Contact</label><input name="Contact" required></div>
+        </div>
+        <div class="grid-2">
+          <div><label>Email</label><input type="email" name="_replyto" required></div>
+          <div><label>Phone (optional)</label><input name="Phone"></div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <label>Product</label>
+            <select name="Product" required>
+              <option value="" disabled selected>Choose…</option>
+              <option>No. 6 — Concentré Réparateur™</option>
+              <option>No. 9 — Le Rituel Renouveau™</option>
+              <option>Scellé™ — Finishing Serum</option>
+              <option>No. 13 — Crème de l’Hydrofermé™</option>
+            </select>
+          </div>
+          <div><label>Quantity (MOQ 15)</label><input name="Quantity" type="number" min="15" step="1" required></div>
+        </div>
+
+        <label>Notes (timing, batch, logistics)</label>
+        <textarea name="Notes" rows="4"></textarea>
+
+        <button class="btn" type="submit">Submit Request</button>
+        <p style="font-size:.9rem; color:#6b625c; margin-top:.6rem;">We’ll confirm deposit (30%) and batch timing by email.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Époque Labs™ · All rights reserved.<br>
+    Époquelle™, La Méthode Émile™, and Compendium d’Aragon™ are protected trademarks.
+  </footer>
+
+  <script>
+    // Optional light gating
+    const accepted = sessionStorage.getItem('epo.accepted') === 'true';
+    // if (!accepted) location.replace('/portal/policy.html');
+  </script>
+</body>
+</html>
